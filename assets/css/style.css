@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&family=Kumbh+Sans:wght@100..900&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+
+body {
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 19px 24px 25px 24px;
+  width: 100%;
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    .spaghetti {
+      width: 16px;
+      height: 15px;
+      cursor: pointer;
+    }
+
+    .logo {
+      width: 137.5px;
+      height: 20px;
+      cursor: pointer;
+    }
+  }
+
+  .cart-items {
+    display: flex;
+    align-items: center;
+    gap: 22.18px;
+
+    .cart,
+    .user {
+      cursor: pointer;
+    }
+  }
+}
+
+.product {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .left-guide,
+  .right-guide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 14.29px 17.14px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #ffffff;
+    color: rgba(29, 32, 38, 1);
+    background-color: rgba(255, 255, 255, 1);
+  }
+
+  .left-guide {
+    left: 16px;
+  }
+
+  .right-guide {
+    right: 16px;
+  }
+}
+
+.product-content {
+
+  padding: 24px 24px 88px 24px;
+
+  h2 {
+    font-family: Kumbh Sans;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14.88px;
+    letter-spacing: 1.85px;
+    color: #ff7e1b;
+    margin-bottom: 19px;
+  }
+
+  h1 {
+    font-family: Kumbh Sans;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 32px;
+    color: #1d2026;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-family: Kumbh Sans;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px;
+    color: #69707d;
+    margin-bottom: 24px;
+  }
+
+  .price-container {
+    font-family: Kumbh Sans;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    .total {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+
+      .total-price {
+        font-size: 28px;
+        line-height: 34.73px;
+        color: rgba(29, 32, 38, 1);
+      }
+
+      .discount {
+        display: inline-block;
+        padding: 7px 8px 4px 8px;
+        background-color: #ffeee2;
+        border: 1px solid #ffeee2;
+        border-radius: 6px;
+        font-size: 16px;
+        line-height: 19.84px;
+        color: #ff7e1b;
+      }
+    }
+
+    .price {
+      font-size: 16px;
+      line-height: 26px;
+      color: rgba(182, 188, 200, 1);
+    }
+  }
+
+  .product-count {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f6f8fd;
+    padding: 22px 24px 18px 24px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    border: none;
+
+    .minus-btn,
+    .plus-btn {
+      cursor: pointer;
+      border: none;
+      background-color: #f6f8fd;
+    }
+
+    .count {
+      font-family: Kumbh Sans;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19.84px;
+      text-align: center;
+      color: rgba(29, 32, 38, 1);
+      display: inline-block;
+    }
+
+    .minus-btn {
+      font-size: 13px;
+    }
+
+    .plus-btn {
+      font-size: 12px;
+    }
+  }
+
+  .add-to-cart-container {
+    button {
+      width: 100%;
+      padding-block: 19px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15.54px;
+      cursor: pointer;
+      background-color: #ff7e1b;
+      color: #ffffff;
+      font-family: Kumbh Sans;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19.84px;
+      border-radius: 10px;
+      border: none;
+    }
+  }
+
+
+}
