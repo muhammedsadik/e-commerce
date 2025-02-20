@@ -1,7 +1,7 @@
 const filePath = "assets/json/product.json";
 const forwardBtn = document.querySelector('.right-guide');
 const backwardBtn = document.querySelector('.left-guide');
-const imageContainer = document.querySelector('.product-img-container');
+const imageContainer = document.querySelector('.product-img-wrapper');
 
 let product = {};
 let currentIndex = 0;
@@ -21,50 +21,32 @@ async function getData() {
 }
 
 forwardBtn.addEventListener('click', (e) => {
-  
   currentIndex++;
   if (currentIndex > (product.images.length - 1)) {
     currentIndex = 0;
   }
-
-  renderProduct();
+  imageContainer.style.transform = `translateX(-${currentIndex * 100}%)`;;
 });
 
 backwardBtn.addEventListener('click', (e) => {
-
   currentIndex--;
-
   if (currentIndex < 0) {
     currentIndex = 3;
   }
-
-  renderProduct();
+  imageContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
 });
 
-
-
 function renderProduct() {
+  product.images.forEach(productImg => {
+    imageContainer.innerHTML +=
+      `
+      <div class="product-img-container">
+        <img class="product-image" src="assets/img/${productImg}" alt="">
+      </div>
+    `;
+  });
 
-  imageContainer.innerHTML =
-    `
-    <img src="assets/img/${product.images[currentIndex]}" alt="">
-  `;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
